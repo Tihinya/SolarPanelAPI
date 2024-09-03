@@ -1,0 +1,48 @@
+{
+    "name": "solar_panel_api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.ts",
+    "scripts": {
+        "build": "tsc",
+        "start": "nodemon src/index.ts",
+        "swagger": "tsoa spec"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/bcryptjs": "^2.4.6",
+        "@types/cookie-parser": "^1.4.7",
+        "@types/cors": "^2.8.17",
+        "@types/express": "^4.17.21",
+        "@types/jest": "^29.5.12",
+        "@types/jsonwebtoken": "^9.0.6",
+        "@types/node": "^22.5.2",
+        "@types/supertest": "^6.0.2",
+        "@types/swagger-ui-express": "^4.1.6",
+        "@types/uuid": "^10.0.0",
+        "jest": "^29.7.0",
+        "nodemon": "^3.1.4",
+        "prettier": "^3.3.3",
+        "swagger-ui-express": "^5.0.1",
+        "ts-jest": "^29.2.5",
+        "ts-node": "^10.9.2",
+        "tsoa": "^6.4.0",
+        "tsx": "^4.19.0",
+        "typescript": "^5.5.4"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "jsonwebtoken": "^9.0.2",
+        "pg": "^8.12.0",
+        "pg-hstore": "^2.3.4",
+        "reflect-metadata": "^0.2.2",
+        "typeorm": "^0.3.20",
+        "uuid": "^10.0.0"
+    }
+}
