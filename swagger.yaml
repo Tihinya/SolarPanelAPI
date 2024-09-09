@@ -1,0 +1,134 @@
+openapi: 3.0.0
+info:
+    title: Solar Panels and User API
+    version: 1.0.0
+    description: API for managing solar panels and user information
+
+tags:
+    - name: Solar Panels
+      description: Endpoints related to solar panel information and performance
+    - name: Users
+      description: Endpoints related to user management
+
+paths:
+    # Solar Panels Endpoints
+    /api/solarPanels/solar-panels/information:
+        get:
+            summary: Get solar panels information
+            tags:
+                - Solar Panels
+            responses:
+                "200":
+                    description: Successful response
+                "401":
+                    description: Unauthorized
+
+    /api/solarPanels/performance/estimate:
+        get:
+            summary: Get performance estimate
+            tags:
+                - Solar Panels
+            responses:
+                "200":
+                    description: Successful response
+                "401":
+                    description: Unauthorized
+
+    /api/solarPanels/performance/monitor:
+        post:
+            summary: Monitor performance
+            tags:
+                - Solar Panels
+            responses:
+                "200":
+                    description: Successful response
+                "401":
+                    description: Unauthorized
+
+    /api/solarPanels/performance/history:
+        get:
+            summary: Get performance history
+            tags:
+                - Solar Panels
+            responses:
+                "200":
+                    description: Successful response
+                "401":
+                    description: Unauthorized
+
+    /api/solarPanels/carbon-footprint:
+        get:
+            summary: Get carbon footprint information
+            tags:
+                - Solar Panels
+            responses:
+                "200":
+                    description: Successful response
+                "401":
+                    description: Unauthorized
+
+    # User Endpoints
+    /api/user/signup:
+        post:
+            summary: User sign up
+            tags:
+                - Users
+            responses:
+                "200":
+                    description: Successful sign up
+                "400":
+                    description: Bad request
+
+    /api/user/signin:
+        post:
+            summary: User sign in
+            tags:
+                - Users
+            responses:
+                "200":
+                    description: Successful sign in
+                "401":
+                    description: Unauthorized
+
+    /api/user/user/information:
+        get:
+            summary: Get user information
+            tags:
+                - Users
+            responses:
+                "200":
+                    description: Successful response
+                "401":
+                    description: Unauthorized
+
+    /api/user/user/delete:
+        delete:
+            summary: Delete user
+            tags:
+                - Users
+            responses:
+                "200":
+                    description: User successfully deleted
+                "401":
+                    description: Unauthorized
+
+    /api/user/user/update:
+        put:
+            summary: Update user information
+            tags:
+                - Users
+            responses:
+                "200":
+                    description: User information updated successfully
+                "401":
+                    description: Unauthorized
+
+components:
+    securitySchemes:
+        bearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
+
+security:
+    - bearerAuth: []

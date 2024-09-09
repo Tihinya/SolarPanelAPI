@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  solarPanel-database:
+    image: postgres:16.3-alpine
+    container_name: solarPanel-database
+    ports:
+      - ${SOLAR_PANEL_POSTGRES_PORT}:${SOLAR_PANEL_POSTGRES_PORT}
+    environment:
+      - POSTGRES_USER=${SOLAR_PANEL_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${SOLAR_PANEL_POSTGRES_PASSWORD}
+      - POSTGRES_DB=${SOLAR_PANEL_DB}
+    volumes:
+      -  solarPanel-database_postgres_data:/var/lib/postgresql/data
+volumes:
+  solarPanel-database_postgres_data:

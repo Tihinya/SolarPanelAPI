@@ -6,9 +6,8 @@ const { PORT } = process.env;
 
 const initializeApp = async () => {
     const app = await setUpApp();
-
     app.listen(PORT || 3000, () =>
-        console.log("Server is running on port: ", PORT),
+        console.log(`Server running on port: http://localhost:${PORT}`),
     );
 };
 

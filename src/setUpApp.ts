@@ -5,12 +5,14 @@ import dotenv from "dotenv";
 dotenv.config();
 const { COOKIE_SECRET } = process.env;
 
-// Import Middleware
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import UserRouter from "./routes/user";
 import SolarPanelsRouter from "./routes/solarPanels";
-import ConnectDatabase from "./models/dbConnection";
+// import ConnectDatabase from "./models/dbConnection";
+import yamljs from "yamljs";
+import { serve, setup } from "swagger-ui-express";
+const swaggerDocument = yamljs.load("./swagger.yaml");
 
 const setUpApp = async () => {
     const app = express();
@@ -19,6 +21,8 @@ const setUpApp = async () => {
     app.use(cookieParser(COOKIE_SECRET!));
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
+
+    app.use("/api-docs", serve, setup(swaggerDocument));
 
     app.use("/api/solarPanels", SolarPanelsRouter);
     app.use("/api/user", UserRouter);
@@ -29,7 +33,7 @@ const setUpApp = async () => {
         });
     });
 
-    await ConnectDatabase();
+    // await ConnectDatabase();
 
     return app;
 };
