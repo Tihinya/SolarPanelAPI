@@ -9,12 +9,12 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import UserRouter from "./routes/user";
 import SolarPanelsRouter from "./routes/solarPanels";
-// import ConnectDatabase from "./models/dbConnection";
+import ConnectDatabase from "./models/dbConnection";
 import yamljs from "yamljs";
 import { serve, setup } from "swagger-ui-express";
 const swaggerDocument = yamljs.load("./swagger.yaml");
 
-const setUpApp = async () => {
+export const setUpApp = async () => {
     const app = express();
 
     app.use(cors({ origin: "*" }));
@@ -33,9 +33,7 @@ const setUpApp = async () => {
         });
     });
 
-    // await ConnectDatabase();
+    await ConnectDatabase();
 
     return app;
 };
-
-export default setUpApp;

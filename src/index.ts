@@ -1,4 +1,4 @@
-import setUpApp from "./setUpApp";
+import { setUpApp } from "./setUpApp";
 import dotenv from "dotenv";
 
 dotenv.config();
