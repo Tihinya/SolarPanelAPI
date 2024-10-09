@@ -1,0 +1,5 @@
+# Ignore build folder
+dist
+node_modules
+.nuxt
+*.log
