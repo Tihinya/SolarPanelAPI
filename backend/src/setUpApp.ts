@@ -24,8 +24,8 @@ export const setUpApp = async () => {
 
     app.use("/api-docs", serve, setup(swaggerDocument));
 
-    app.use("/api/solarPanels", SolarPanelsRouter);
-    app.use("/api/user", UserRouter);
+    app.use("/solarPanels", SolarPanelsRouter);
+    app.use("/user", UserRouter);
 
     app.get("/", (_req, res) => {
         res.status(200).json({

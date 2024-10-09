@@ -1,13 +1,13 @@
-import { defineNuxtRouteMiddleware, navigateTo } from "nuxt/app";
+import { defineNuxtRouteMiddleware, navigateTo } from 'nuxt/app'
 
-export default defineNuxtRouteMiddleware((to) => {
-  const token = localStorage.getItem("token");
+export default defineNuxtRouteMiddleware(to => {
+    const token = localStorage.getItem('token')
 
-  if (!token && to.path !== "/login") {
-    return navigateTo("/login");
-  }
+    if (!token && to.path !== '/login') {
+        return navigateTo('/login')
+    }
 
-  if (token && to.path === "/login") {
-    return navigateTo("/");
-  }
-});
+    if (token && to.path === '/login') {
+        return navigateTo('/')
+    }
+})

@@ -11,8 +11,8 @@ const UserRouter = Router();
 
 UserRouter.post("/signup", SignUp);
 UserRouter.post("/signin", SignIn);
-UserRouter.get("/user/information", VerifyUser, GetUser);
-UserRouter.delete("/user/delete", VerifyUser, DeleteUser);
-UserRouter.put("/user/update", VerifyUser, UpdateUser);
+UserRouter.get("/information", VerifyUser, GetUser);
+UserRouter.delete("/delete", VerifyUser, DeleteUser);
+UserRouter.put("/update", VerifyUser, UpdateUser);
 
 export default UserRouter;
